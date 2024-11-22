@@ -1,7 +1,6 @@
 return {
   {
     "nvim-cmp",
-    lazy = false,
     dependencies = { "sourcegraph/sg.nvim" },
     opts = function(_, opts)
       table.insert(opts.sources, 1, { name = "cody" })
