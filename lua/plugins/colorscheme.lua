@@ -1,12 +1,18 @@
 return {
   {
-    "marko-cerovac/material.nvim",
-    lazy = false,
-  },
-  {
-    "LazyVim/LazyVim",
+    "folke/tokyonight.nvim",
     opts = {
-      colorscheme = "material-darker",
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "tokyonight",
+      },
     },
   },
 }
