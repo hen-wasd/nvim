@@ -1,17 +1,8 @@
 return {
-  -- add gruvbox
-  -- {
-  --   "ellison/gruvbox.nvim",
-  --   opt = {
-  --     transparent = true,
-  --     styles = {
-  --       sidebars = "transparent",
-  --       float = "transparent",
-  --     },
-  --   },
-  -- },
+  -- add material
   {
-    "folke/tokyonight.nvim",
+    "marko-cerovac/material.nvim",
+    lazy = false,
     opts = {
       transparent = true,
       styles = {
@@ -20,10 +11,11 @@ return {
       },
     },
   },
+
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "material-darker",
     },
   },
 }
