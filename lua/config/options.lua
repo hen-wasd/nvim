@@ -8,6 +8,9 @@ vim.o.textwidth = 160
 if vim.fn.executable("pwsh") == 1 then
   vim.o.shell = "pwsh"
 end
+if vim.fn.executable("powershell") == 1 then
+  vim.o.shell = "powershell"
+end
 
 -- Setting shell command flags
 vim.o.shellcmdflag =
