@@ -5,7 +5,6 @@
 -- keymaps.lua
 local map = vim.keymap.set
 
--- Mapeamento para executar o comando :FlutterRun com F5
-map("n", "<F5>", ":FlutterRun<CR>", { noremap = true, silent = true })
--- Mapeamento para executar o comando :FlutterQuit com Shift + F5
-map("n", "<S-F5>", ":FlutterQuit<CR>", { noremap = true, silent = true })
+map("x", "I", ":s/\\(\\s*\\)/\\0/ | nohl" .. ("<left>"):rep(8))
+
+map("x", "A", ":s/$// | nohl" .. ("<left>"):rep(8))
