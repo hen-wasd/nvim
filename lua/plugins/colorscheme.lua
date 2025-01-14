@@ -1,31 +1,4 @@
 return {
-  -- add material
-  {
-    "marko-cerovac/material.nvim",
-    lazy = false,
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
-  },
-
-  {
-    "jackplus-xyz/binary.nvim",
-    opts = {
-      style = "dark",
-      -- colors = {
-      --   fg = "#FFB400",
-      -- },
-      -- Customize the reversed groups
-      reversed_group = {
-        Title = true, -- Add a new reversed group
-        Search = false, -- Disable a default reversed group
-      },
-    },
-  },
   {
     "zenbones-theme/zenbones.nvim",
     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
