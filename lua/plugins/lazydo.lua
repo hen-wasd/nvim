@@ -5,7 +5,7 @@ return {
     cmd = { "LazyDoToggle", "LazyDoPin" },
     keys = { -- recommended keymap for easy toggle LazyDo in normal and insert modes (arbitrary)
       {
-        "<F2>",
+        "<F10>",
         "<ESC><CMD>LazyDoToggle<CR>",
         mode = { "n", "i" },
       },
