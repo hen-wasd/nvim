@@ -3,7 +3,7 @@ return {
     "Dan7h3x/LazyDo",
     branch = "main",
     cmd = { "LazyDoToggle", "LazyDoPin" },
-    keys = { -- recommended keymap for easy toggle LazyDo in normal and insert modes (arbitrary)
+    keys = {
       {
         "<F10>",
         "<ESC><CMD>LazyDoToggle<CR>",
