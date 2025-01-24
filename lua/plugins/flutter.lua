@@ -7,7 +7,7 @@ return {
     },
     config = function()
       require("flutter-tools").setup({
-        fvm = false,
+        fvm = true,
         lsp = {
           settings = {
             lineLength = 160,
