@@ -1,40 +1,37 @@
 return {
+  -- LSP servers and clients communicate which features they support through "capabilities".
+  --  By default, Neovim supports a subset of the LSP specification.
+  --  With blink.cmp, Neovim has *more* capabilities which are communicated to the LSP servers.
+  --  Explanation from TJ: https://youtu.be/m8C0Cq9Uv9o?t=1275
+  --
+  -- This can vary by config, but in general for nvim-lspconfig:
+
   {
     "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
+    dependencies = { "saghen/blink.cmp" },
+
+    -- example using `opts` for defining servers
     opts = {
-      ---@type lspconfig.options
       servers = {
-        pyright = {},
-        dartls = {},
+        lua_ls = {},
       },
     },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      "jose-elias-alvarez/typescript.nvim",
-      init = function()
-        require("lazyvim.util").lsp.on_attach(function(_, buffer)
-          -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
-          vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
-        end)
-      end,
-    },
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        tsserver = {},
-      },
-      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-      setup = {
-        tsserver = function(_, opts)
-          require("typescript").setup({ server = opts })
-          return true
-        end,
-      },
-    },
+    config = function(_, opts)
+      local lspconfig = require("lspconfig")
+      for server, config in pairs(opts.servers) do
+        -- passing config.capabilities to blink.cmp merges with the capabilities in your
+        -- `opts[server].capabilities, if you've defined it
+        config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+        lspconfig[server].setup(config)
+      end
+    end,
+
+    -- example calling setup directly for each LSP
+    config = function()
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
+      local lspconfig = require("lspconfig")
+
+      lspconfig["lua_ls"].setup({ capabilities = capabilities })
+    end,
   },
 }
