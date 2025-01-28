@@ -1,15 +1,5 @@
 return {
   {
-    "tokyonight.nvim",
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
-  },
-  {
     "zenbones-theme/zenbones.nvim",
     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
@@ -23,7 +13,6 @@ return {
     --     vim.cmd.colorscheme('zenbones')
     -- end
   },
-
   {
     "LazyVim/LazyVim",
     opts = {
