@@ -14,7 +14,6 @@ return {
             require("dap.ext.vscode").load_launchjs()
           end,
         },
-        flutter_path = "<workspace>/.fvm/flutter_sdk",
         fvm = true,
         lsp = {
           settings = {
