@@ -7,6 +7,12 @@ return {
     },
     config = function()
       require("flutter-tools").setup({
+        decorations = {
+          statusline = {
+            app_version = true,
+            device = true,
+          },
+        },
         debugger = {
           enabled = true,
         },
