@@ -16,7 +16,6 @@ return {
         debugger = {
           enabled = true,
         },
-        fvm = true,
         lsp = {
           settings = {
             lineLength = 160,
