@@ -9,12 +9,12 @@ return {
       require("flutter-tools").setup({
         decorations = {
           statusline = {
-            app_version = true,
-            device = true,
+            app_version = false,
+            device = false,
           },
         },
         debugger = {
-          enabled = true,
+          enabled = false,
         },
         lsp = {
           settings = {
