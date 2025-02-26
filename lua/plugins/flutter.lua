@@ -14,7 +14,7 @@ return {
           },
         },
         debugger = {
-          enabled = false,
+          enabled = true,
         },
         lsp = {
           settings = {

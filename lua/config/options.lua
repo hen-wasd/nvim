@@ -40,8 +40,5 @@ vim.o.shellredir = '2>&1 | %{ "$_" } | Out-File %s; exit $LastExitCode'
 -- Setting shell pipe
 vim.o.shellpipe = '2>&1 | %{ "$_" } | Tee-Object %s; exit $LastExitCode'
 
--- Setting shell quote options
-vim.o.shellquote = ""
-vim.o.shellxquote = ""
-
+-- Setting shell qu
 vim.lsp.inlay_hint.is_enabled = true
