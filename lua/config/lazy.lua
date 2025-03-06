@@ -20,8 +20,8 @@ require("lazy").setup({
     { import = "plugins" },
   },
   defaults = {
-    lazy = true,
-    version = "*",
+    lazy = false,
+    version = false,
   },
   checker = {
     enabled = true,
@@ -31,6 +31,9 @@ require("lazy").setup({
     rtp = {
       disabled_plugins = {
         "gzip",
+        -- "matchit",
+        -- "matchparen",
+        -- "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",
